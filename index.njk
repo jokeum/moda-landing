@@ -1,0 +1,52 @@
+---
+title: Landing page - moda
+description: This is a temporary page under construction.
+layout: layout.njk
+logo_url: https://pdis.nat.gov.tw/images/pdis-logo-final-inverse.png
+embed_links:
+  - text: bubble tea
+    url: https://www.youtube.com/embed/DWDdKdWBNeU
+    thumbnail_url: http://img.youtube.com/vi/DWDdKdWBNeU/mqdefault.jpg
+  - text: dsi
+    url: https://www.youtube.com/embed/4ea80jU1E4o
+    thumbnail_url: http://img.youtube.com/vi/4ea80jU1E4o/mqdefault.jpg
+  - text: bubble tea
+    url: https://www.youtube.com/embed/DWDdKdWBNeU
+    thumbnail_url: http://img.youtube.com/vi/DWDdKdWBNeU/mqdefault.jpg
+  - text: dsi
+    url: https://www.youtube.com/embed/4ea80jU1E4o
+    thumbnail_url: http://img.youtube.com/vi/4ea80jU1E4o/mqdefault.jpg
+---
+
+<main class="container-fluid">
+  <div class="logo">
+    <img src="{{ logo_url }}" alt="moda logo" width="300">
+  </div>
+
+  <h1>{{ title }}</h1>
+  <h2>{{ description }}</h2>
+
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {% for link in embed_links %}
+        <li class="glide__slide">
+          <a href="#" onClick="toggleModal(event)" data-target="modal-{{ loop.index }}"> <img src="{{ link.thumbnail_url }}" alt="{{ link.text }}"> </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% for link in embed_links %}
+      <dialog id="modal-{{ loop.index }}">
+        <article>
+          <a href="#close" aria-label="Close" class="close" data-target="modal-{{ loop.index }}" onClick="toggleModal(event)"> </a>
+          <iframe width="560" height="315" src="{{ link.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+      </dialog>
+      {% endfor %}
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <a class="glide__arrow glide__arrow--left" data-glide-dir="<">←</a>
+      <a class="glide__arrow glide__arrow--right" data-glide-dir=">">→</a>
+    </div>
+  </div>
+</main>

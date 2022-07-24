@@ -1,0 +1,35 @@
+@use 'theme';
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo {
+  margin: 0 auto 2rem auto;
+  img {
+    border-radius: 50%;
+  }
+}
+
+h1, h2 {
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.glide {
+  max-width: 100%;
+  width: 600px;
+  margin: 3rem auto 0 auto;
+}
+
+.glide__arrows {
+  text-align: center;
+}
