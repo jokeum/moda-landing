@@ -2,11 +2,10 @@
 
 main {
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
-.logo, .fulltext {
+.logo, .text {
   margin: 0 auto 2rem auto;
   @media (prefers-color-scheme: dark) {
     img {
