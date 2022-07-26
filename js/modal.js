@@ -46,6 +46,8 @@ const closeModal = modal => {
     document.documentElement.classList.remove(closingClass, isOpenClass);
     document.documentElement.style.removeProperty('--scrollbar-width');
     modal.removeAttribute('open');
+    iframe = modal.querySelector('iframe');
+    if (iframe) iframe.src = iframe.src; /* reload iframe */
   }, animationDuration);
 }
 
