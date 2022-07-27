@@ -6,7 +6,7 @@ main {
 }
 
 .logo, .text {
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 3.5rem auto;
   @media (prefers-color-scheme: dark) {
     img {
       filter: invert(100%);
