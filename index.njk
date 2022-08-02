@@ -2,63 +2,87 @@
 title: 𝗺𝗼𝗱𝗮 — 數位發展部 Ministry of Digital Affairs
 description: Coming soon August 2022.
 layout: layout.njk
-logo_url: ./img/moda-logo.svg
-logo2_url: ./img/moda-text.svg
+logo1:
+  url: ./img/moda-logo-ver.svg
+  text: moda logo
+logo2:
+  url: ./img/moda-logo-hor-1.svg
+  text: moda logo horizontal
+pdf:
+  url: ./assets/moda_guideline.pdf
+  text: moda guideline
+video:
+  url: https://media.w3.org/2010/05/sintel/trailer.mp4
+  text: moda intro
 embed_links:
   - text: bubble tea
     url: https://www.youtube.com/embed/DWDdKdWBNeU
-    thumbnail_url: http://img.youtube.com/vi/DWDdKdWBNeU/mqdefault.jpg
+    thumbnail: http://img.youtube.com/vi/DWDdKdWBNeU/mqdefault.jpg
   - text: dsi
     url: https://www.youtube.com/embed/BkewUzZKanU
-    thumbnail_url: http://img.youtube.com/vi/BkewUzZKanU/mqdefault.jpg
-  - text: bubble tea
-    url: https://www.youtube.com/embed/DWDdKdWBNeU
-    thumbnail_url: http://img.youtube.com/vi/DWDdKdWBNeU/mqdefault.jpg
-  - text: dsi
-    url: https://www.youtube.com/embed/BkewUzZKanU
-    thumbnail_url: http://img.youtube.com/vi/BkewUzZKanU/mqdefault.jpg
+    thumbnail: http://img.youtube.com/vi/BkewUzZKanU/mqdefault.jpg
 ---
 
 <main class="container-fluid">
-  <div class="logo">
-    <img src="{{ logo_url }}" alt="moda logo" width="300">
-  </div>
-
-  <div class="text">
-    <img src="{{ logo2_url }}" alt="moda text" width="300">
-  </div>
-
-  <!-- <h1>{{ title }}</h1> -->
-  <h2>{{ description }}</h2>
-
-  <div class="glide">
-    <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides">
-        {% for link in embed_links %}
-        <li class="glide__slide">
-          <a href="#" onClick="toggleModal(event)" data-target="modal-{{ loop.index }}"> <img src="{{ link.thumbnail_url }}" alt="{{ link.text }}"> </a>
-        </li>
-        {% endfor %}
-      </ul>
-      {% for link in embed_links %}
-      <dialog id="modal-{{ loop.index }}">
-        <article>
-          <a href="#close" aria-label="Close" class="close" data-target="modal-{{ loop.index }}" onClick="toggleModal(event)"> </a>
-          <iframe width="560" height="315" src="{{ link.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </article>
-      </dialog>
-      {% endfor %}
+  <section class="p0">
+    <div class="logo">
+      <img src="{{ logo1.url }}" alt="{{ logo1.text }}" width="300">
     </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <a class="glide__arrow glide__arrow--left" data-glide-dir="<">←</a>
-      <a class="glide__arrow glide__arrow--right" data-glide-dir=">">→</a>
+    <h1>{{ description }}</h1>
+    <p>↓</p>
+  </section>
+
+  <section class="p1">
+    <div class="grid">
+      <div>
+        <h1>標誌設計 Logo Design</h1>
+        <p>數位發展部標誌以「群眾・訊號・連結」的意涵出發，強調部門任務不僅關注數位技術發展，更擔任了資源媒合之角色，其中橫跨了經濟產業、資通安全、城鄉發展等領域。</p>
+        <p>The logo of the Ministry of Digital Affairs (moda) incorporates the core ideas of “people,” “signal,” and “connectivity.” It spotlights moda’s focus on digital technology development as well as its role matching resources in key fields such as the economy, industry, cyber security, and regional development.</p>
+      </div>
+      <div class="logo">
+        <img src="{{ logo2.url }}" alt="{{ logo2.text }}" width="600">
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="p2">
+    <div class="grid">
+      <div class="guideline">
+        <iframe src="{{ pdf.url }}#toolbar=0" title="{{ pdf.text }}">
+          <p>
+            Browser not supported. Please download <a href="{{ pdf.url }}">{{ pdf.text }}</a> instead.
+          </p>
+        </iframe>
+      </div>
+      <div>
+        <p>從硬體平台到數位雲端，從開發端的編寫序列，再單元擴散至人民參與，標誌造型由幾何化的 I/O 線段所共構，透過具方向性的符號組成隱喻，詮釋部門實踐 Crowd to Cloud to Crowd 之系列進程；透過多領域合作，橋接數位民主。</p>
+        <p>The logo, composed of geometric I/O lines, spans hardware, platforms, to cloud technology, from developer coding to civic participation. Its directional symbols are a metaphor illustrating moda’s “Crowd to Cloud to Crowd” methodology connecting digital democracy through interdisciplinary collaborations.</p>
+        <a href="{{ pdf.url }}">Download pdf 💾</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="p3">
+    <div class="grid">
+      <div>
+        <p>別於過往將數位科技視為冷色系的刻板印象，標誌的主色定調為明快、清透、愉悅的檸檬黃，部分應用品佐以中灰輔助色，藉色相及明度的對比搭配提味。除了呼應人文本位、民主服務的特質，更冀盼發展紅利能擴展至不同年齡與地區，使人人都得以親近。</p>
+        <p>The logo’s color palette is characterized by a bright, clear, and uplifting lemon yellow offset with complementary grays. It steps outside the stereotype characterizing digital technology by harnessing the visual power of cool, contrasting hues. This is in sync with moda’s humanistic nature, democratic services, and goal of open public engagement via policies benefiting all age groups and regions.</p>
+      </div>
+      <div class="color">
+        <div class="principle"></div>
+        <div class="support1"></div>
+        <div class="support2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p4">
+    <div class="video">
+      <video src="{{ video.url }}" width="100%" controls>
+        <p>
+          Browser not supported. Please download <a href="{{ video.url }}">{{ video.text }}</a> instead.
+        </p>
+      </video>
+    </div>
+  </section>
 </main>
-
-<script>
-  new Glide('.glide', {
-    focusAt: 'center',
-    perView: 2
-  }).mount()
-</script>

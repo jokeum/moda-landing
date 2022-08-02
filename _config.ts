@@ -16,7 +16,8 @@ site.use(terser({
 }));
 site.use(svgo());
 site.use(metas());
-site.ignore("README.md", "CHANGELOG.md");
+site.ignore("README.md", "LICENSE");
 site.copy("img/favicon.ico", "favicon.ico");
+site.copy("assets");
 
 export default site;
