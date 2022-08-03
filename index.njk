@@ -9,7 +9,7 @@ logo2:
   url: ./img/moda-logo-hor-1.svg
   text: moda logo horizontal
 pdf:
-  url: ./assets/moda_guideline.pdf
+  url: https://docs.google.com/presentation/d/e/2PACX-1vSgBMPTtutCec3L_O9RNbEkNaqlKMBbg3UdkuVFpfTUQdl-XMI-Vc9JM5MwhdMOovyVSxhP8242UCZ1/embed?start=false&loop=false
   text: moda guideline
 video:
   url: https://media.w3.org/2010/05/sintel/trailer.mp4
@@ -28,7 +28,7 @@ embed_links:
     <div class="logo">
       <img src="{{ logo1.url }}" alt="{{ logo1.text }}" width="300">
     </div>
-    <h1>{{ description }}</h1>
+    <h1 class="mono">{{ description }}</h1>
     <p>↓</p>
   </section>
 
@@ -48,7 +48,7 @@ embed_links:
   <section class="p2">
     <div class="grid">
       <div class="guideline">
-        <iframe src="{{ pdf.url }}#toolbar=0" title="{{ pdf.text }}">
+        <iframe src="{{ pdf.url }}" title="{{ pdf.text }}">
           <p>
             Browser not supported. Please download <a href="{{ pdf.url }}">{{ pdf.text }}</a> instead.
           </p>
@@ -61,7 +61,7 @@ embed_links:
       </div>
     </div>
   </section>
-
+  
   <section class="p3">
     <div class="grid">
       <div>
@@ -75,14 +75,10 @@ embed_links:
       </div>
     </div>
   </section>
-
-  <section class="p4">
-    <div class="video">
-      <video src="{{ video.url }}" width="100%" controls>
-        <p>
-          Browser not supported. Please download <a href="{{ video.url }}">{{ video.text }}</a> instead.
-        </p>
-      </video>
-    </div>
-  </section>
 </main>
+
+<footer>
+  <p class="mono">
+    Report issue at <a href="https://github.com/moda-gov-tw/moda-landing/issues">GitHub</a>.
+  </p>
+</footer>
