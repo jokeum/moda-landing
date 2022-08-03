@@ -31,6 +31,9 @@ section {
 }
 
 .p0 {
+  .logo img {
+    width: 15rem;
+  }
   h1 {
     margin: 2rem auto 0 auto;
   }
@@ -45,6 +48,9 @@ section {
   }
   .logo {
     padding: 1rem 0;
+    img {
+      width: 30rem;
+    }
   }
 }
 
@@ -70,10 +76,12 @@ section {
 
 .p3 {
   .color {
-    margin: auto 0;
+    margin: auto;
+    max-width: 30rem;
+    width: 100%;
+    aspect-ratio: 1.618;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 18vh;
     .principle {
       background: #f4ea5a;
       grid-row: 1 / 3;
