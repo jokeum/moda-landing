@@ -1,5 +1,5 @@
 metas:
   site: moda landing page
   lang: en
-  icon: ./img/logo.png
-  image: ./img/logo.png
+  icon: ./assets/logo.png
+  image: ./assets/logo.png
