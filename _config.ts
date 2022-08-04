@@ -19,5 +19,6 @@ site.use(metas());
 site.ignore("README.md", "LICENSE");
 site.copy("img/favicon.ico", "favicon.ico");
 site.copy("assets");
+site.copy("404.html");
 
 export default site;
