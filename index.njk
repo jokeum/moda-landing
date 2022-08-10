@@ -62,9 +62,9 @@ embed_links:
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            {% for slide in slides %}
+            {% for slide in slides -%}
             <li class="glide__slide">
-              <img src="{{ slide }}" alt="" loading="lazy">
+              <img src="{{ slide }}" alt="{{ loop.index }}" loading="lazy">
             </li>
             {% endfor %}
           </ul>
