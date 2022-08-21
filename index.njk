@@ -23,16 +23,19 @@ slides:
   - ./assets/guideline-10.png
   - ./assets/guideline-15.png
   - ./assets/guideline-17.png
-video:
-  url: https://media.w3.org/2010/05/sintel/trailer.mp4
-  text: moda intro
-embed_links:
-  - text: bubble tea
-    url: https://www.youtube.com/embed/DWDdKdWBNeU
-    thumbnail: http://img.youtube.com/vi/DWDdKdWBNeU/mqdefault.jpg
-  - text: dsi
-    url: https://www.youtube.com/embed/BkewUzZKanU
-    thumbnail: http://img.youtube.com/vi/BkewUzZKanU/mqdefault.jpg
+videos:
+  - text: Aušrinė Armonaitė
+    url: ./assets/ArmonaiteA.mp4
+    thumbnail: ./assets/ArmonaiteA.png
+  - text: Ro Khanna
+    url: assets/RepRoKhanna.mp4
+    thumbnail: ./assets/RepRoKhanna.png
+  - text: Audrey Tang
+    url: assets/audreyt.mp4
+    thumbnail: ./assets/audreyt.png
+  - text: Freddy Lim
+    url: assets/FreddyLim.mp4
+    thumbnail: ./assets/FreddyLim.png
 ---
 
 <main class="container-fluid">
@@ -91,6 +94,36 @@ embed_links:
       </div>
     </div>
   </section>
+
+  <section class="p4">
+    <div class="glide-2">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          {% for video in videos -%}
+          <li class="glide__slide">
+            <img src="{{ video.thumbnail }}" alt="{{ video.text }}" loading="lazy">
+            <p>
+              <a href="#" onClick="toggleModal(event)" data-target="modal-{{ loop.index }}">
+                {{ video.text }} 
+              </a>
+            </p>
+          </li>
+          {% endfor %}
+        </ul>
+        {% for video in videos -%}
+        <dialog id="modal-{{ loop.index }}">
+          <article>
+            <a href="#close" aria-label="Close" class="close" data-target="modal-{{ loop.index }}" onClick="toggleModal(event)"> </a>
+            <video controls>
+              <source src="{{ video.url }}" type="video/mp4">
+              <p>Your browser does not support the video tag. Download <a href="{{ video.url }}">video</a> instead.</p>
+            </video>
+          </article>
+        </dialog>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -106,6 +139,12 @@ embed_links:
     rewind: false,
     startAt: 0,
     perView: 1,
+    peek: 20,
+  }).mount()
+  new Glide('.glide-2', {
+    focusAt: 'center',
+    startAt: 0,
+    perView: 2,
     peek: 20,
   }).mount()
 </script>

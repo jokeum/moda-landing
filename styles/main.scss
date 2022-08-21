@@ -30,6 +30,10 @@ section {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.grid, .grid>div {
+  margin: auto 0;
+}
+
 .p0 {
   .logo img {
     width: 15rem;
@@ -66,10 +70,6 @@ section {
   }
 }
 
-.grid, .grid>div {
-  margin: auto;
-}
-
 .p3 {
   .color {
     margin: auto;
@@ -96,9 +96,17 @@ section {
   }
 }
 
-.p4 {
-  .video {
-    margin: auto;
+.p4>.glide-2 {
+  width: 100%;
+  max-width: 40rem;
+  margin: auto;
+  text-align: center;
+  ul>li {
+    list-style: none;
+  }
+  video {
+    width: 100%;
+    max-width: 30rem;
   }
 }
 
