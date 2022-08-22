@@ -9,7 +9,7 @@
 const isOpenClass = 'modal-is-open';
 const openingClass = 'modal-is-opening';
 const closingClass = 'modal-is-closing';
-const animationDuration = 300; // ms
+const animationDuration = 0; // ms
 let visibleModal = null;
 
 // Toggle modal
@@ -46,8 +46,11 @@ const closeModal = modal => {
     document.documentElement.classList.remove(closingClass, isOpenClass);
     document.documentElement.style.removeProperty('--scrollbar-width');
     modal.removeAttribute('open');
-    iframe = modal.querySelector('iframe');
-    if (iframe) iframe.src = iframe.src; /* reload iframe */
+    /* stop the video if any inside */
+    // iframe = modal.querySelector('iframe');
+    // if (iframe) iframe.src = iframe.src;
+    video = modal.querySelector('video');
+    video.pause();
   }, animationDuration);
 }
 
