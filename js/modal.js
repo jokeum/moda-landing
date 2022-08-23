@@ -34,8 +34,11 @@ const openModal = modal => {
   setTimeout(() => {
     visibleModal = modal;
     document.documentElement.classList.remove(openingClass);
+    modal.setAttribute('open', true);
   }, animationDuration);
-  modal.setAttribute('open', true);
+  /* load the video if any inside */
+  video = modal.querySelector('video');
+  video.load();
 }
 
 // Close modal
@@ -46,12 +49,12 @@ const closeModal = modal => {
     document.documentElement.classList.remove(closingClass, isOpenClass);
     document.documentElement.style.removeProperty('--scrollbar-width');
     modal.removeAttribute('open');
-    /* stop the video if any inside */
-    // iframe = modal.querySelector('iframe');
-    // if (iframe) iframe.src = iframe.src;
-    video = modal.querySelector('video');
-    video.pause();
   }, animationDuration);
+  /* stop the video if any inside */
+  // iframe = modal.querySelector('iframe');
+  // if (iframe) iframe.src = iframe.src;
+  video = modal.querySelector('video');
+  video.pause();
 }
 
 // Close with a click outside

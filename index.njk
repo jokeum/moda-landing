@@ -50,7 +50,6 @@ videos:
       <img src="{{ logo1.url }}" alt="{{ logo1.text }}">
     </div>
     <h1 class="mono">{{ description }}</h1>
-    <p>↓</p>
   </section>
 
   <section class="p1">
@@ -120,7 +119,7 @@ videos:
         <dialog id="modal-{{ loop.index }}">
           <article>
             <a href="#close" aria-label="Close" class="close" data-target="modal-{{ loop.index }}" onClick="toggleModal(event)"> </a>
-            <video controls>
+            <video preload="none" controls>
               <source src="{{ video.url }}" type="video/mp4">
               <p>Your browser does not support the video tag. Download <a href="{{ video.url }}">video</a> instead.</p>
             </video>
@@ -141,16 +140,18 @@ videos:
 
 <script>
   new Glide('.glide', {
-    type: 'slider',
     rewind: false,
-    startAt: 0,
     perView: 1,
     peek: 20,
   }).mount()
   new Glide('.glide-2', {
-    focusAt: 'center',
-    startAt: 0,
-    perView: 2,
+    focusAt: "center",
+    perView: 4,
     peek: 20,
+    breakpoints: {
+      800: {
+        perView: 2,
+      }
+    },
   }).mount()
 </script>
