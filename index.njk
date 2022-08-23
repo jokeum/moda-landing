@@ -106,7 +106,10 @@ videos:
         <ul class="glide__slides">
           {% for video in videos -%}
           <li class="glide__slide">
-            <img src="{{ video.thumbnail }}" alt="{{ video.text }}" loading="lazy">
+            <picture>
+              <source srcset="{{ video.thumbnail | replace(".png", ".webp") }}" type="image/webp">
+              <img src="{{ video.thumbnail }}" alt="{{ video.text }}" loading="lazy">
+            </picture>
             <p>
               <a href="#" onClick="toggleModal(event)" data-target="modal-{{ loop.index }}">
                 {{ video.text }} 
