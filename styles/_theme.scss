@@ -4,8 +4,8 @@
 :root:not([data-theme="dark"]) {
   --background-color: #fafafa;
   --color: hsl(205deg, 20%, 32%);
-  --primary: #fdd835;
-  --primary-hover: #fbc02d;
+  --primary: #fbc02d;
+  --primary-hover: #fdd835;
   --primary-focus: rgba(253, 216, 53, 0.125);
   --primary-inverse: rgba(0, 0, 0, 0.75);
 }
@@ -19,6 +19,7 @@
     --primary: #fdd835;
     --primary-hover: #ffeb3b;
     --primary-focus: rgba(253, 216, 53, 0.25);
+    
     --primary-inverse: rgba(0, 0, 0, 0.75);
   }
 }
