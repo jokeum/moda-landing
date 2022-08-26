@@ -99,6 +99,14 @@ section {
   text-align: center;
   ul>li {
     list-style: none;
+    h3 {
+      margin: 1rem 0 0.5rem 0;
+      font-size: medium;
+      font-weight: normal;
+    }
+    p {
+      font-size: small;
+    }
   }
   video {
     width: 100%;

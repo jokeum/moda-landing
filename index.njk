@@ -24,55 +24,56 @@ slides:
   - ./assets/pdf/guideline-15.png
   - ./assets/pdf/guideline-17.png
 videos:
-  - text: Aušrinė Armonaitė
+  - title: Aušrinė Armonaitė
     url: ./assets/video/ArmonaiteA.mp4
     thumbnail: ./assets/video/ArmonaiteA.png
-  - text: Ro Khanna
+  - title: Ro Khanna
     url: assets/video/RepRoKhanna.mp4
     thumbnail: ./assets/video/RepRoKhanna.png
-  - text: Audrey Tang
+  - title: Audrey Tang
     url: assets/video/audreyt.mp4
     thumbnail: ./assets/video/audreyt.png
-  - text: Freddy Lim
+  - title: Freddy Lim
     url: assets/video/FreddyLim.mp4
     thumbnail: ./assets/video/FreddyLim.png
-  - text: Steve Chen
+  - title: Steve Chen
     url: assets/video/SteveChen.mp4
     thumbnail: ./assets/video/SteveChen.png
-  - text: Jun Murai
+  - title: Jun Murai
     url: assets/video/JunMurai.mp4
     thumbnail: ./assets/video/JunMurai.png
-  - text: Arthur Huang
+  - title: Arthur Huang
     url: assets/video/ArthurHuang.mp4
     thumbnail: ./assets/video/ArthurHuang.png
-  - text: Sandra Oudkirk
+  - title: Sandra Oudkirk
     url: assets/video/SandraOudkirk.mp4
     thumbnail: ./assets/video/SandraOudkirk.png
-  - text: The Embassy of Paraguay
+  - title: The Embassy of Paraguay
     url: assets/video/EmbassyofParaguay.mp4
     thumbnail: ./assets/video/EmbassyofParaguay.png
-  - text: British Office Taipei
+  - title: British Office Taipei
     url: assets/video/BritishOfficeTaipeiSubbed.mp4
     thumbnail: ./assets/video/BritishOfficeTaipeiSubbed.png
-  - text: Bureau Français Taipei
+  - title: Bureau Français Taipei
     url: assets/video/BureauFrançaisTaipei.mp4
     thumbnail: ./assets/video/BureauFrançaisTaipei.png
-  - text: Nigeria Trade Office
+  - title: Nigeria Trade Office
     url: assets/video/NigeriaTradeOffice.mp4
     thumbnail: ./assets/video/NigeriaTradeOffice.png
-  - text: Japan-Taiwan Exchange Association
+  - title: Hiroyasu Izumi
+    desc: Chief Representative of the Japan-Taiwan Exchange Association Taipei Office
     url: assets/video/JapanTaiwanExchangeAssociation.mp4
     thumbnail: ./assets/video/JapanTaiwanExchangeAssociation.png
-  - text: Chilean Trade Office
+  - title: Chilean Trade Office
     url: assets/video/ChileanTradeOffice.mp4
     thumbnail: ./assets/video/ChileanTradeOffice.png
-  - text: Pia Mancini
+  - title: Pia Mancini
     url: assets/video/PiaMancini.mp4
     thumbnail: ./assets/video/PiaMancini.png
-  - text: German Trade Office
+  - title: German Trade Office
     url: assets/video/GermanTradeOffice.mp4
     thumbnail: ./assets/video/GermanTradeOffice.png
-  - text: Saint-Christopher (Saint-Kitts) and Nevis
+  - title: Saint-Christopher (Saint-Kitts) and Nevis
     url: assets/video/SaintChristopherSaintKittsandNevis.mp4
     thumbnail: ./assets/video/SaintChristopherSaintKittsandNevis.png
 ---
@@ -141,13 +142,14 @@ videos:
           <li class="glide__slide">
             <picture>
               <source srcset="{{ video.thumbnail | replace(".png", ".webp") }}" type="image/webp">
-              <img src="{{ video.thumbnail }}" alt="{{ video.text }}" loading="lazy">
+              <img src="{{ video.thumbnail }}" alt="{{ video.title }}" loading="lazy">
             </picture>
-            <p>
+            <h3>
               <a href="#" onClick="toggleModal(event)" data-target="modal-{{ loop.index }}">
-                {{ video.text }} 
+                {{ video.title }} 
               </a>
-            </p>
+            </h3>
+            <p>{{ video. desc }}</p>
           </li>
           {% endfor %}
         </ul>
